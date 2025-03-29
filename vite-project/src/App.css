@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.layout{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+/* _____header_________ */
+
+.header {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  background: rgb(234, 234, 234);
+}
+
+.header .title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.navbar .login {
+  font-size: 16px;
+}
+
+/* _________Footer__________ */
+
+.footer {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+  background-color: black;
+  color: white;
+}
+
+.footer .footerContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer .footerContainer .socialLinks{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .footerContainer .socialLinks .links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer .footerContainer .socialLinks .links i{
+  font-size: 20px;
+  color: white;
+  transition: all ease-in-out 0.2s;
+}
+
+.footer .mainBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer .box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.footer .box2 h2 {
+  text-align: right;
+}
+
+/* __________________________HomePage__________________________________ */
+
+main {
+  background-color: black;
+  color: white;
+}
+
+main .block {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+main .block1 .hero {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+main .block1 .hero h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+main .block1 .hero p {
+  font-size: 24px;
+}
+
+main .block2 {
+  background: white;
+  color: black;
+  padding: 10px 40px;
+  border-bottom: 1px solid black;
+}
+
+main .block2 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container #first {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.container #second {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  color: black;
+}
+
+.container #second .box {
+  background: rgb(255, 253, 253);
+  /* height: 350px; */
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  transition: all ease-in-out 0.2s;
+}
+
+.container #second .box .imgBox {
+  height: 60%;
+}
+
+.container #second .imgBox img {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.container #second .box .text-box h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.container #second .box:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 20px gray;
+}
+
+/* Ebooks */
+
+main .block3 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .block4{
+  background: white;
+  color: black;
+}
+
+main .block4 .container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .block4 .container .circle{
+  width: 300px;
+  height: 300px;
+  background: black;
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .block4 .container .circle img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+main .block4 .container .info{
+  width: 700px;
+  background: rgb(223, 221, 221);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+main .block4 .container .info h2{
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* -------SignUp form-------------------- */
+#form-container{
+  background: white;
+  color: white;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.inner-container{
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 450px;
+  color: black;
+  padding: 30px 20px; 
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  box-shadow: 5px 5px 20px gray;
+}
+
+.inner-container h2{
+  font-size: 24px;
+}
+
+.inner-container p{
+  font-size: 20px;
+}
+
+.inner-container p .login{
+  color: blue;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+form .input{
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+  background: white;
+  color: black;
+
+}
+
+.input-field{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* -----------------button------------------------ */
+
+.button{
+  width: 200px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: black;
+  color: white;
+  padding: 10px 5px ;
+}
+
+
+.postFormContainer{
+  width: 100%;
+}
+
+.postFormContainer .postForm{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.RTEcontainer{
+  padding: 10px 20px;
+  width: 60%;
+}
+
+
+#postContainer{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+#postContainer #postImage{
+  width: 40%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px gray;
+}
+
+#postContainer #postImage img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#postContainer #textContent{
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px gray;
+  padding: 20px 30px;
+}
+
+#postContainer #textContent h1{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#postContainer #textContent div{
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* _-------------------------------------------------------------------- */
+
+#showAllPosts{
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* flex-direction: column; */
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+#showAllPosts #second {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  color: black;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+#showAllPosts #second .box {
+  background: rgb(255, 253, 253);
+  /* height: 350px; */
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  transition: all ease-in-out 0.2s;
+}
+
+#showAllPosts #second .box .imgBox {
+  height: 60%;
+}
+
+#showAllPosts #second .imgBox img {
+  height: 100%;
+  border-radius: 10px;
+}
+
+#showAllPosts #second .box .text-box h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#showAllPosts #second .box:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 20px gray;
+}
