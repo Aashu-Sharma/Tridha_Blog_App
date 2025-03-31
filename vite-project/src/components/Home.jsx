@@ -31,11 +31,14 @@ function HomePage() {
                 <Link to={'/allPosts'}> View More </Link>
               </div>
               <div id="second">
+                <div className="box-container">
                 {
                   posts?.slice(0, 4).map((post) => (
                     <PostCard post={post} />
                   ))
                 }
+                </div>
+                
 
 
               </div>

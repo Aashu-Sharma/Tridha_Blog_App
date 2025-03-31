@@ -163,24 +163,29 @@ main .block2 .container {
   transform: translate(-50%, -50%);
 }
 
-.container #first {
+main .block2 .container #first {
   display: flex;
   justify-content: space-between;
   font-size: 24px;
   font-weight: bold;
 }
 
-.container #second {
+main .block2 .container #second {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 10px;
   align-items: center;
   color: black;
 }
 
-.container #second .box {
+main .block2 .container #second .box-container{
+  display: flex;
+  flex-basis: 31%;
+  width: 100%;
+}
+
+main .block2 .container #second .box-container .box {
   background: rgb(255, 253, 253);
-  /* height: 350px; */
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -191,22 +196,22 @@ main .block2 .container {
   transition: all ease-in-out 0.2s;
 }
 
-.container #second .box .imgBox {
+main .block2 .container #second .box .imgBox {
   height: 60%;
 }
 
-.container #second .imgBox img {
+main .block2 .container #second .imgBox img {
   height: 100%;
   border-radius: 10px;
 }
 
-.container #second .box .text-box h1 {
+main .block2 .container #second .box .text-box h1 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.container #second .box:hover {
+main .block2 .container #second .box:hover {
   transform: scale(1.05);
   box-shadow: 5px 5px 20px gray;
 }
@@ -461,4 +466,40 @@ form .input{
 #showAllPosts #second .box:hover {
   transform: scale(1.05);
   box-shadow: 5px 5px 20px gray;
+}
+
+
+
+
+
+
+/* _----------Mobile devices______________________ */
+
+
+@media (max-width: 450px){
+  main .block1 .hero h1{
+    font-size: 20px;
+  }
+
+  
+
+  main .block1 .hero p{
+    font-size: 16px;
+  }
+
+  main .block1 .hero{
+    width: 80%;
+  }
+  
+  main .block1{
+    height: 50vh;
+  }
+  
+  main .block2{
+    min-height: 100vh
+  }
+
+  main .block2 .container{
+    width: 80%;
+  }
 }

@@ -38,6 +38,7 @@ function RTE({ name, control, label, defaultValue = '' }) {
                 "help",
                 "wordcount",
                 "anchor",
+                'paste'
               ],
               toolbar:
                 "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
