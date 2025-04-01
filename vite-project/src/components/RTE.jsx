@@ -42,6 +42,10 @@ function RTE({ name, control, label, defaultValue = '' }) {
               ],
               toolbar:
                 "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
+              paste_as_text: true,
+              paste_auto_cleanup_on_paste: true,
+              paste_remove_styles: true,
+              paste_remove_styles_if_webkit: true, 
               content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }"
             }}
             onEditorChange={onChange}

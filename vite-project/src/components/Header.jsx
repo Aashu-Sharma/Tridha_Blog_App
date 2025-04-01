@@ -1,6 +1,6 @@
 import React from "react";
-import {Link} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import LogOutBtn from "./LogOutBtn";
 
 function Header() {
@@ -9,7 +9,15 @@ function Header() {
 
   const isAdmin = userData?.isAdmin;
   console.log(isAdmin)
-  console.log("user logged in: ",authStatus);
+  console.log("user logged in: ", authStatus);
+  let navLinks = document.getElementById("nav-links");
+  function showMenu() {
+    navLinks.style.right = "0";
+  }
+  function hideMenu() {
+    navLinks.style.right = "-200px";
+  }
+
   const navItems = [
     {
       name: 'Home',
@@ -23,11 +31,11 @@ function Header() {
       active: true
     },
 
-    {
-      name: 'Ebooks',
-      slug: "/",
-      active: true
-    },
+    // {
+    //   name: 'Ebooks',
+    //   slug: "/",
+    //   active: true
+    // },
 
     {
       name: 'Login',
@@ -51,41 +59,34 @@ function Header() {
       name: 'Add-Ebooks',
       slug: "/addEbooks",
       active: isAdmin,
-    }
-
+    },
   ]
   return (
     <header className="header">
-      <nav className="navbar">
+      <nav>
         <div className="title">
           <h3>Tridha <br />Meditation</h3>
         </div>
+        <div className="navbar" id="nav-links">
+          <i class="fa-solid fa-xmark" onClick={() => hideMenu()}></i>
+          <ul>
+            {
+              navItems.map((item) => item.active ? (
+                <li key={item.name}>
+                  <Link to={item.slug}>{item.name}</Link>
+                </li>
+              ) : null)
+            }
+          </ul>
 
-        <ul>
-          {/* <li>
-            <Link>Home</Link>
-          </li>
-          <li>
-            <Link>Blogs</Link>
-          </li>
-          <li>
-            <Link>Ebooks</Link>
-          </li> */}
-
-          {
-            navItems.map((item) => item.active ? (
-              <li key={item.name}>
-                <Link to = {item.slug}>{item.name}</Link>
-              </li>
-            ) : null)
-          }
-        </ul>
-
-        {authStatus && (
-          <div className="login"> 
-          <LogOutBtn/>
-        </div>)}
+          {authStatus && (
+            <div className="login">
+              <LogOutBtn />
+            </div>)}
+        </div>
+        <i class="fa-solid fa-bars" onClick={() => showMenu()}></i>
       </nav>
+
     </header>
   );
 }
@@ -132,18 +133,18 @@ export default Header;
 //               <Logo width='70px' />
 
 //             </Link>
-//           </div> 
+//           </div>
 //           <ul className='flex ml-auto'>
-            // {navItems.map((item) =>
-            //   item.active ? (
-            //     <li key={item.name}>
-            //       <button
-            //         onClick={() => navigate(item.slug)}
-            //         className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
-            //       >{item.name}</button>
-            //     </li>
-            //   ) : null
-            // )}
+// {navItems.map((item) =>
+//   item.active ? (
+//     <li key={item.name}>
+//       <button
+//         onClick={() => navigate(item.slug)}
+//         className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
+//       >{item.name}</button>
+//     </li>
+//   ) : null
+// )}
 //             {authStatus && (
 //               <li>
 //                 <LogoutBtn />

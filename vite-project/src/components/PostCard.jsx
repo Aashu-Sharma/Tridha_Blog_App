@@ -1,6 +1,7 @@
 import React from 'react';
 import databaseService from '../appwrite/post.config.js';
 import {useNavigate} from 'react-router-dom';
+import '../App.css'
 
 function PostCard({ post }) {
   function truncate(str, maxLength) {
@@ -19,7 +20,8 @@ function PostCard({ post }) {
         <img src={databaseService.getFilePreview(post.featured_image)} alt={post.title} />
       </div>
       <div className="text-box">
-        <h1>{truncate(post.title, 20)}</h1>
+        <h1>{truncate(post.title, 25)}</h1>
+        <p>{truncate(post.content, 25)}</p>
       </div>
     </div>
 

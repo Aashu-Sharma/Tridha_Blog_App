@@ -6,12 +6,15 @@ import '../App.css'
 function DisplayPosts() {
   const posts = useSelector((state) => state.posts.posts);
   return (
-    <div id="second">
-      {
-        posts?.map((post) => (
-          <PostCard post={post} />
-        ))
-      }
+    <div id="displayPosts">
+      <div className="box-container">
+        {
+          posts?.map((post) => (
+            <PostCard post={post} />
+          ))
+        }
+      </div>
+      
     </div>
   )
 }

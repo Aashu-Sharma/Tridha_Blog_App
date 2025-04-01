@@ -32,15 +32,12 @@ function HomePage() {
               </div>
               <div id="second">
                 <div className="box-container">
-                {
-                  posts?.slice(0, 4).map((post) => (
-                    <PostCard post={post} />
-                  ))
-                }
+                  {
+                    posts?.slice(0, 3).map((post) => (
+                      <PostCard post={post} />
+                    ))
+                  }
                 </div>
-                
-
-
               </div>
 
             </div>
@@ -53,7 +50,7 @@ function HomePage() {
           </section>
       }
 
-      
+
       <section className="block block4">
         <div className="container">
           <div className="circle">
