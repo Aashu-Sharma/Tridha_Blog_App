@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LogOutBtn from "./LogOutBtn";
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const authStatus = useSelector((state) => state.auth.status);
   const userData = useSelector((state) => state.auth.userData);
 
@@ -67,8 +68,8 @@ function Header() {
         <div className="title">
           <h3>Tridha <br />Meditation</h3>
         </div>
-        <div className="navbar" id="nav-links">
-          <i class="fa-solid fa-xmark" onClick={() => hideMenu()}></i>
+        <div className={`navbar ${menuOpen ? "open" : ""}`} id="nav-links">
+          <i class="fa-solid fa-xmark" onClick={() => setMenuOpen(false)}></i>
           <ul>
             {
               navItems.map((item) => item.active ? (
@@ -84,7 +85,7 @@ function Header() {
               <LogOutBtn />
             </div>)}
         </div>
-        <i class="fa-solid fa-bars" onClick={() => showMenu()}></i>
+        <i class="fa-solid fa-bars" onClick={() => setMenuOpen(true)}></i>
       </nav>
 
     </header>

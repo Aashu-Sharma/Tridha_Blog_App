@@ -546,6 +546,12 @@ form .input{
     cursor: pointer;
   }
 
+  .navbar.open{
+    right: 0;
+  }
+
+  
+
 
 
   main .block1 .hero h1{
