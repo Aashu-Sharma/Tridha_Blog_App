@@ -41,7 +41,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchPosts());
-  }, [])
+  }, [userData]);
 
   
   return !loading ? (

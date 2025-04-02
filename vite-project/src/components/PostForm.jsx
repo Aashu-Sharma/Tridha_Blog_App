@@ -60,7 +60,7 @@ function PostForm({ post }) {
             placeholder="Enter Title"
             {...register("title", { required: true })}
           />
-          <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
+          <RTE label="Content :"  name="content" control={control} defaultValue={getValues("content")} />
         </div>
         <div className='postFormRight'>
           <Input
@@ -82,6 +82,7 @@ function PostForm({ post }) {
           <Select
             options={["active", "inactive"]}
             label='Status'
+            className = "select"
             {...register("status", { required: true })}
           />
 

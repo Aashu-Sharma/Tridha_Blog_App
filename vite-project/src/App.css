@@ -63,7 +63,7 @@ nav .fa-solid{
   display: block;
   width: 0;
   height: 2px;
-  background: #f44336;
+  background: gray;
   margin: auto;
 }
 
@@ -226,7 +226,8 @@ main .block2 .container #second .imgBox img {
 }
 
 main .block2 .container #second .box .text-box{
-  margin: 20px 0;
+  width: 80%;
+  margin: 20px 10px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -354,9 +355,10 @@ form{
 form .input{
   border: 1px solid gray;
   border-radius: 5px;
-  padding: 10px;
+  padding: 10px 5px;
   background: white;
   color: black;
+  margin-bottom: 20px;
 }
 
 .input-field{
@@ -378,38 +380,51 @@ form .input{
 }
 
 
+/* -------------------------PostForm-------------------------- */
+
 .postFormContainer{
+  min-height: 100vh;
   width: 100%;
 }
 
-.postFormContainer .postForm{
+.postForm{
   width: 100%;
   display: flex;
+  flex-direction: row;
+  padding: 10px 30px;
   align-items: center;
   justify-content: space-between;
 }
 
-.RTEcontainer{
-  padding: 10px 20px;
-  width: 60%;
+.postForm .RTEcontainer{
+  width: 600px;
 }
 
+.postForm .postFormRight{
+  align-self: flex-start;
+}
+
+/* ------------------Post---------------------- */
 
 #postContainer{
+  width: 90%;
+  margin: 20px auto;
+  background: white;
+  border-radius: 10px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
-  justify-content: space-between;
   padding: 20px;
 }
 
-#postContainer #postImage{
-  width: 40%;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 5px 5px 20px gray;
+#postContainer #postImage {
+  align-self: center;
+  width: 400px;
+  display: flex;
+  justify-content: center; /* Centers the image */
+  align-items: center;
+  overflow: hidden; /* Ensures no overflow */
+  border-radius: 8px;
 }
 
 #postContainer #postImage img{
@@ -440,6 +455,10 @@ form .input{
   align-items: center;
   justify-content: center;
   gap: 20px;
+}
+
+.rte{
+  z-index: 1;
 }
 
 /* _-------------------------------------------------------------------- */
@@ -550,10 +569,6 @@ form .input{
     right: 0;
   }
 
-  
-
-
-
   main .block1 .hero h1{
     font-size: 20px;
   }
@@ -607,5 +622,39 @@ form .input{
 
   #showAllPosts #displayPosts .box-container .box{
     margin: auto;
+  }
+
+  #postContainer{
+    padding: 0;
+  }
+
+  #postContainer #postImage{
+    width: 100%;
+  }
+
+  #postContainer #textContent{
+    padding: 20px 5px;
+  }
+
+  #postContainer #textContent h1{
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  #postContainer #textContent p{
+    font-size: 16px;
+  }
+
+  .postForm{
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .postForm .RTEcontainer{
+    width: 100%;
+
   }
 }

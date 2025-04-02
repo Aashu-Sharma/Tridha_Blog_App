@@ -46,6 +46,8 @@ function RTE({ name, control, label, defaultValue = '' }) {
               paste_auto_cleanup_on_paste: true,
               paste_remove_styles: true,
               paste_remove_styles_if_webkit: true, 
+              paste_enable_default_filters: false,
+              paste_strip_class_attributes: "all",
               content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }"
             }}
             onEditorChange={onChange}

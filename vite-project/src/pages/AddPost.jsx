@@ -3,9 +3,7 @@ import {PostForm} from '../components/index.js';
 
 function AddPost() {
   return (
-    <div>
       <PostForm/>
-    </div>
   )
 }
 
