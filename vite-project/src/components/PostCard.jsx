@@ -17,7 +17,7 @@ function PostCard({ post }) {
 
     <div className="box" id="fourth_block" onClick={() => navigate(`/post/${post.$id}`)}>
       <div className="imgBox">
-        <img src={databaseService.getFilePreview(post.featured_image)} alt={post.title} />
+        <img src={post.featured_image} alt={post.title} />
       </div>
       <div className="text-box">
         <h1>{truncate(post.title, 25)}</h1>

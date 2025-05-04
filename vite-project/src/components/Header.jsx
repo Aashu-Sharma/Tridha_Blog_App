@@ -2,16 +2,42 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LogOutBtn from "./LogOutBtn";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react'
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const authStatus = useSelector((state) => state.auth.status);
   const userData = useSelector((state) => state.auth.userData);
+  const tl = gsap.timeline();
 
   const isAdmin = userData?.isAdmin;
   console.log(isAdmin)
   console.log("user logged in: ", authStatus);
   let navLinks = document.getElementById("nav-links");
+
+  // useGSAP(
+  //   // gsap.to(".title", {
+  //   //   x: 30,
+  //   //   duration: 0.7,
+  //   //   delay: 1,
+  //   // })
+
+  //   tl.from(".title", {
+  //     x: -30,
+  //     opacity: 0,
+  //     duration: 0.7,
+  //     delay: 1,
+  //   }),
+
+  //   tl.from("ul", {
+  //     y: -30,
+  //     duration: 0.7,
+  //     delay: 1,
+  //     stagger: 0.5
+  //   })
+  // )
+
   function showMenu() {
     navLinks.style.right = "0";
   }
@@ -62,6 +88,9 @@ function Header() {
       active: isAdmin,
     },
   ]
+
+
+  
   return (
     <header className="header">
       <nav>

@@ -119,10 +119,6 @@ export class AuthService {
       console.log("Appwrite service :: logOut :: error", error.message);
     }
   }
-
-  isAdmin(){
-    
-  }
 }
 
 const authService = new AuthService();

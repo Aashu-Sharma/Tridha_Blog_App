@@ -22,23 +22,26 @@ function PostForm({ post }) {
     console.log("FormData: ", data);
     if (post) {
       const file = data.image[0] ? databaseService.uploadFile(data.image[0]) : null;
+      console.log("file: ", file)
       if (file) {
         databaseService.deleteFile(post.featured_image);
       }
       const dbPost = await databaseService.updatePost(post.$id, {
         ...data,
-        featured_image: file ? file.$id : undefined
+        featured_image: file && undefined
       })
 
       if (dbPost) {
         navigate(`/post/${dbPost.$id}`)
       }
     } else {
+      
       const file = data.image[0] ? await databaseService.uploadFile(data.image[0]) : null;
+      console.log("Image coming from data: ",data.image[0]);
       console.log(file);
       if (file) {
-        const fileId = file.$id;
-        data.featured_image = fileId;
+        // const fileId = file.$id;
+        data.featured_image = file;
         const dbPost = await databaseService.createPost({
           ...data,
           userId: userData.$id,
@@ -60,7 +63,7 @@ function PostForm({ post }) {
             placeholder="Enter Title"
             {...register("title", { required: true })}
           />
-          <RTE label="Content :"  name="content" control={control} defaultValue={getValues("content")} />
+          <RTE label="Content :" className= "rte" name="content" control={control} defaultValue={getValues("content")} />
         </div>
         <div className='postFormRight'>
           <Input
@@ -73,7 +76,7 @@ function PostForm({ post }) {
           {post && (
             <div className="">
               <img
-                src={databaseService.getFilePreview(post.featured_image)}
+                src={post.featured_image}
                 alt={post.title}
                 className="rounded-lg w-1/3"
               />

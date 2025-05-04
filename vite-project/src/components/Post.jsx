@@ -45,7 +45,7 @@ export default function Post() {
     <div id="postContainer">
       <div id="postImage">
         <img
-          src={databaseService.getFilePreview(post.featured_image)}
+          src={post.featured_image}
           alt={post.title}
         />
       </div>
