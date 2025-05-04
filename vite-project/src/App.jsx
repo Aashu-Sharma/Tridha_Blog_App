@@ -32,12 +32,6 @@ function App() {
     }).finally(() => setLoading(false));
   }, [])
 
-  // useEffect(() => {
-  //   if(userData){
-      
-  //   }
-  // }, [])
-
 
   useEffect(() => {
     dispatch(fetchPosts());

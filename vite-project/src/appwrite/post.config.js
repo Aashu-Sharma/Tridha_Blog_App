@@ -1,11 +1,12 @@
 import config from '../config/config.js';
-import {Client, Databases, Storage, ID, Query } from 'appwrite';
+import {Client, Databases, Storage, ID, Query, Functions} from 'appwrite';
 import {uploadOnCloudinary} from '../utils/cloudinary.js';
 
 export class DatabaseService{
     client = new Client();
     databases;
     bucket;
+    functions;
 
     constructor(){
         this.client
@@ -14,6 +15,7 @@ export class DatabaseService{
 
         this.databases = new Databases(this.client);
         this.bucket = new Storage(this.client);
+        this.functions = new Functions(this.client);
     }
 
     async createPost({title, content, featured_image, status, userId}){
@@ -117,16 +119,15 @@ export class DatabaseService{
     }
 
     async deleteFile(file){
+        if(!file) throw new Error("File is required");
         try {
-            // await this.bucket.deleteFile(
-            //     config.appwriteBucketId,
-            //     fileId,
-            // )
-            // return true;
-            // await deleteFromCloudinary(file);
-            // return true;
-
-            
+            const publicId = file.split('/').pop().split('.')[0];
+            const payload = JSON.stringify(publicId);
+            const response = await this.functions.createExecution(
+                config.appwriteFunctionsId,
+                payload,
+            )
+            if(!response) console.error("Sorry, couldn't delete image from cloudinary");
         } catch (error) {
             console.log("Database service :: deleteFile :: error", error.message);
             return false;

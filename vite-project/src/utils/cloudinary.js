@@ -21,11 +21,12 @@ async function uploadOnCloudinary(file) {
       }
     );
 
-    // console.log("UploadImageUrl: ", res.json());
     return res.json();
   } catch (error) {
     console.log("Couldn't upload image to cloudinary!!!");
   }
 }
 
-export { uploadOnCloudinary};
+
+
+export { uploadOnCloudinary };
