@@ -109,9 +109,6 @@ export class DatabaseService{
             console.log("image from cloudinary: ", imageFromCloudinary )
 
             return imageFromCloudinary.url;
-
-
-            
         } catch (error) {
             console.log("Database service :: uploadFile :: error", error.message);
             return false;

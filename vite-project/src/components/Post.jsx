@@ -34,6 +34,8 @@ export default function Post() {
 
   return post ? (
     <div id="postContainer">
+      <h1 id="title">{post.title}</h1>
+
       <div id="postImage">
         <img
           src={post.featured_image}
@@ -41,7 +43,6 @@ export default function Post() {
         />
       </div>
       <div id="textContent">
-        <h1>{post.title}</h1>
         <p>{post.content}</p>
         {isAuthor && (
           <div>

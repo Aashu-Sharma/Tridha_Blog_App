@@ -7,7 +7,6 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const authStatus = useSelector((state) => state.auth.status);
   const userData = useSelector((state) => state.auth.userData);
-  const tl = gsap.timeline();
 
   const isAdmin = userData?.isAdmin;
   console.log(isAdmin)

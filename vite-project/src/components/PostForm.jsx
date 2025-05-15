@@ -28,7 +28,7 @@ function PostForm({ post }) {
       }
       const dbPost = await databaseService.updatePost(post.$id, {
         ...data,
-        featured_image: file
+        featured_image: file || post.featured_image
       })
 
       if (dbPost) {
