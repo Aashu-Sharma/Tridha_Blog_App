@@ -22,7 +22,7 @@ function Footer() {
                 shivangi2020jyotish@gmail.com <br />pranprakashsharma@gmail.com
               </p>
               <p className="">
-                PHONE: 7983314136, 9997525012
+                PHONE: 7983314136, 9997532602
               </p>
             </div>
           </div>
