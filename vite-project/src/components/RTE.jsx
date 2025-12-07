@@ -45,26 +45,50 @@ function RTE({ name, control, label, defaultValue = '' }) {
               ],
               toolbar:
                 "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
-              paste_as_text: true,
-              paste_auto_cleanup_on_paste: true,
-              paste_remove_styles: true,
-              paste_remove_styles_if_webkit: true,
-              paste_merge_formats: false,
-              paste_enable_default_filters: false,
-              paste_strip_class_attributes: "all",
-              paste_word_valid_elements: true,
-              paste_tab_spaces: 2,
-              visualchars_default_state: true,
-              charmap_append: [
-                [160, 'no-break space'],
-                [173, 'soft hyphen'],
-                [34, 'quotation mark'],
-                [8217,"	RIGHT SINGLE QUOTATION MARK"],
-                [8212, "EM DASH"],
-                [8205, 'zero width joiner'],
-                [8206, 'left-to-right mark'],
-                [8207, 'right-to-left mark']
-              ],
+              
+              // Paste configuration
+              paste_as_text: false, // Changed to false to allow processing
+              paste_preprocess: function(plugin, args) {
+                // Replace HTML entities with regular characters
+                let content = args.content;
+                
+                // Replace common Word entities
+                content = content.replace(/&rsquo;/g, "'");
+                content = content.replace(/&lsquo;/g, "'");
+                content = content.replace(/&rdquo;/g, '"');
+                content = content.replace(/&ldquo;/g, '"');
+                content = content.replace(/&ndash;/g, '–');
+                content = content.replace(/&mdash;/g, '—');
+                content = content.replace(/&nbsp;/g, ' ');
+                content = content.replace(/&hellip;/g, '...');
+                
+                // Remove Word-specific markup
+                content = content.replace(/<o:p><\/o:p>/g, '');
+                content = content.replace(/<\/?(o:p|w:|m:|v:)[^>]*>/g, '');
+                
+                args.content = content;
+              },
+              
+              paste_postprocess: function(plugin, args) {
+                // Additional cleanup after paste
+                const node = args.node;
+                
+                // Remove Word classes
+                const elements = node.querySelectorAll('[class^="Mso"]');
+                elements.forEach(el => {
+                  el.removeAttribute('class');
+                });
+                
+                // Clean up styles
+                const styledElements = node.querySelectorAll('[style]');
+                styledElements.forEach(el => {
+                  el.removeAttribute('style');
+                });
+              },
+              
+              entity_encoding: 'raw', // Prevent entity encoding
+              entities: '160,nbsp', // Only encode nbsp if needed
+              
               content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }"
             }}
             onEditorChange={onChange}
