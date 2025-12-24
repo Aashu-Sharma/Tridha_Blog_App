@@ -651,11 +651,12 @@ form .input{
 
   #postContainer{
     padding: 0;
-    width: 80%;
+    width: 90%;
   }
 
   #postContainer #postImage{
     width: 100%;
+    height: 300px;
   }
 
   #postContainer #textContent{
