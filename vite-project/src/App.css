@@ -593,6 +593,10 @@ form .input{
     right: 0;
   }
 
+  main .block1{
+    height: 50vh;
+  }
+
   main .block1 .hero h1{
     font-size: 20px;
   }
@@ -650,6 +654,7 @@ form .input{
 
   #postContainer{
     padding: 0;
+    width: 100%;
   }
 
   #postContainer #postImage{
@@ -679,6 +684,5 @@ form .input{
 
   .postForm .RTEcontainer{
     width: 100%;
-
   }
 }
