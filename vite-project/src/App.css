@@ -439,15 +439,6 @@ form .input{
   border-radius: 10px;
 }
 
-#postContainer #textContent p{
-  width: 100%;
-  background: white;
-  border-radius: 10px;
-  line-height: 2.5;
-  font-size: 20px;
-  color: gray;
-}
-
 #postContainer #textContent h1{
   font-size: 24px;
   font-weight: bold;
@@ -455,38 +446,31 @@ form .input{
   text-align: center;
 }
 
-#postContainer #textContent div{
-  margin: 40px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+#textContent {
+  line-height: 1.8;
+  color: #333;
+}
+
+#textContent>div{
+  display: block;
+  width: 100%;
 }
 
 .rte{
   z-index: 1;
 }
 
-#textContent {
-  display: flex;
-  align-items: center;
-  justify-content: space-betwee;
-  line-height: 1.8;
-  color: #333;
-}
+
 
 #textContent p {
   margin-bottom: 1.5rem;
   margin-top: 0;
-}
-
-#textContent p:last-of-type {
-  margin-bottom: 2rem;
+  display: block;
+  width: 100%;
 }
 
 #textContent strong {
   font-weight: 600;
-  color: #000;
 }
 
 #textContent em {
@@ -495,7 +479,8 @@ form .input{
 
 #textContent br {
   display: block;
-  margin: 0.5rem 0;
+  content: "";
+  margin-top: 0.5rem;
 }
 /* _-------------------------------------------------------------------- */
 
