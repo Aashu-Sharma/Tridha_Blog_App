@@ -43,7 +43,7 @@ export default function Post() {
         />
       </div>
       <div id="textContent">
-        <p>{post.content}</p>
+        <div dangerouslySetInnerHTML={{ __html: post.content }} />
         {isAuthor && (
           <div>
             <Link to={`/editPost/${post.$id}`}>
