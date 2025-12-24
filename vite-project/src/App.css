@@ -467,6 +467,33 @@ form .input{
   z-index: 1;
 }
 
+#textContent {
+  line-height: 1.8;
+  color: #333;
+}
+
+#textContent p {
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+#textContent p:last-of-type {
+  margin-bottom: 2rem;
+}
+
+#textContent strong {
+  font-weight: 600;
+  color: #000;
+}
+
+#textContent em {
+  font-style: italic;
+}
+
+#textContent br {
+  display: block;
+  margin: 0.5rem 0;
+}
 /* _-------------------------------------------------------------------- */
 
 #showAllPosts{
