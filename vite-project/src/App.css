@@ -423,8 +423,8 @@ form .input{
 
 #postContainer #postImage {
   align-self: center;
-  width: 100%;
-  /* width: 100%; */
+  width: 400px;
+  
   display: flex;
   justify-content: center; /* Centers the image */
   align-items: center;
