@@ -593,10 +593,6 @@ form .input{
     right: 0;
   }
 
-  main .block{
-    min-height: 70vh;
-  }
-
   main .block1{
     height: 50vh;
   }
