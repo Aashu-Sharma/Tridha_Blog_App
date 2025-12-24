@@ -468,6 +468,9 @@ form .input{
 }
 
 #textContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-betwee;
   line-height: 1.8;
   color: #333;
 }
