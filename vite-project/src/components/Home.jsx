@@ -15,7 +15,7 @@ function HomePage() {
         <div className="hero">
           <h1>Tridha Meditation</h1>
           <p>
-            MEDITATION IS BEYOND THINKING. <br /> WE DEVELOP YOUR INSIGHT
+            MEDITATION IS BEYOND THINKING. <br /> TRIDHA DEVELOPS YOUR INSIGHT
           </p>
         </div>
       </section>
@@ -59,9 +59,9 @@ function HomePage() {
           <div className="info">
             <h2 className="">Pran Prakash Sharma</h2>
             <p className="">
-              Pran Prakash Sharma is an accredited astrologer and
+              Pran Prakash Sharma is a renowned astrologer and
               spiritual healer, having experience of more than 30 years. If you
-              want to know what your stars say, or stop your eyes on deceptions.
+              want to know what your stars say, feel free to contact us
             </p>
             <p className="">
               Contact: 7983314136 (w), 9997532602 (m)
